@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * Created by mf57 on 15.08.2016.
@@ -13,6 +15,8 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("org.tmp")
 @Configuration
 @EnableAutoConfiguration
+@EnableAsync
+@EnableScheduling
 public class Launcher {
 
     public static void main(String[] args) {
