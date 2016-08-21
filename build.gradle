@@ -1,7 +1,19 @@
 group 'tmp-stats'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -9,6 +21,9 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
 }
+
+mainClassName = "org.tmp.stats.launcher.Launcher"
+
 
 configurations {
     compile.exclude module: "spring-boot-starter-tomcat"
@@ -25,4 +40,8 @@ dependencies {
 
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+bootRepackage {
+    mainClass = 'org.tmp.stats.launcher.Launcher'
 }
