@@ -15,7 +15,7 @@ import java.util.Collections;
 @Configuration
 @EnableMongoRepositories({"org.tmp"})
 @Profile("production")
-public class ProductionMongoConfig extends AbstractMongoConfiguration {
+public class ProductionMongoConfig extends BaseConfig {
 
     @Override
     protected String getDatabaseName() {

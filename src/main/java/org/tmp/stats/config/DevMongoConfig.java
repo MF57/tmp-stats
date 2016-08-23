@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories({"org.tmp"})
 @Profile("development")
-public class DevMongoConfig extends AbstractMongoConfiguration {
+public class DevMongoConfig extends BaseConfig {
 
     @Override
     protected String getDatabaseName() {
